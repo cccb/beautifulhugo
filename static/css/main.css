@@ -181,7 +181,7 @@ img {
 
 @media only screen and (min-width: 768px) {
   .navbar-custom {
-    padding: 20px 0;
+     padding: 20px 0;
     -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
     -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
     transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -195,9 +195,9 @@ img {
 .navbar-custom .avatar-container {
   opacity: 1;
   position: absolute;
-  -webkit-transition: opacity 0.5s ease-in-out;
-  -moz-transition: opacity 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out;
+  -webkit-transition: width 0.5s ease-in-out, margin 0.5s ease-in-out;
+  -moz-transition: width 0.5s ease-in-out, margin 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out, margin 0.5s ease-in-out;
   width: 90px;
   margin-top: -70px;
 }
@@ -216,7 +216,8 @@ img {
 }
 
 .navbar-custom.top-nav-short .avatar-container{
-  opacity: 0;
+  width: 50px;
+  margin-top: -50px;
 }
 
 .navbar-custom.top-nav-expanded .avatar-container  {
@@ -227,8 +228,6 @@ img {
   .navbar-custom .avatar-container {
     width: 90px;
     margin-top: -70px;
-    left: 50%;
-    margin-left: -50px;
 }
 
   .navbar-custom .avatar-container  .avatar-img-border {
@@ -239,9 +238,6 @@ img {
     width: 100%;
   }
 
-  .navbar-brand {
-    display: inline-block;
-  }
 }
 
 /* Multi-level navigation links */
@@ -275,8 +271,6 @@ img {
   .navbar-custom .avatar-container {
     margin-top: -50px;
     width: 50px;
-    left: 50%;
-    margin-left: -20px;
   }
 }
 @media only screen and (min-width: 768px) {
