@@ -31,12 +31,8 @@
           {{ end }}
         </ul>
         <p class="credits copyright text-muted">
-          {{ if .Site.Author.name }}
-            {{ if .Site.Author.website }}
-              <a href="{{ .Site.Author.website }}">{{ .Site.Author.name }}</a>
-            {{ else }}
-              {{ .Site.Author.name }}
-            {{ end }}
+          {{ if .Site.Params.License }}
+            {{ .Site.Params.License }}
           {{ end }}
 
           &nbsp;&bull;&nbsp;
