@@ -129,3 +129,15 @@ id = "telegram"
 url = "https://telegram.me/%s"
 title = "Telegram"
 icon = "fab fa-telegram"
+
+[[social_icons]]
+id = "irc"
+url = "%s"
+title = "IRC"
+icon = "fa fa-hashtag"
+
+[[social_icons]]
+id = "mastodon"
+url = "https://%s"
+title = "Mastodon"
+icon = "fab fa-mastodon"
