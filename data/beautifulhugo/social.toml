@@ -134,7 +134,7 @@ icon = "fab fa-telegram"
 id = "irc"
 url = "%s"
 title = "IRC"
-icon = "fab fa-hashtag"
+icon = "fas fa-hashtag"
 
 [[social_icons]]
 id = "500px"
