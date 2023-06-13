@@ -14,7 +14,7 @@
     <div id="header-big-imgs" data-num-img={{len $bigimg}} {{range $i, $img := $bigimg}}data-img-src-{{add $i 1}}="{{$img.src | absURL }}" {{ if $img.desc}}data-img-desc-{{add $i 1}}="{{$img.desc}}"{{end}}{{end}}></div>
   {{ end }}
 
-  <header class="header-section {{ if $bigimg }}has-img{{ end }}">
+  <header class="header-section{{ if $bigimg }} has-img{{ end }}">
     {{ if $bigimg }}
       <div class="intro-header big-img">
         {{ $subtitle := $.Scratch.Get "subtitle" }}
@@ -25,7 +25,7 @@
                 <h1>{{ with $.Scratch.Get "title" }}{{.}}{{ else }}<br/>{{ end }}</h1>
                   {{ if $subtitle }}
                     {{ if eq .Type "page" }}
-                      <hr class="small">
+                      <hr class="small" />
                       <span class="{{ .Type }}-subheading">{{ $subtitle }}</span>
                     {{ else }}
                       <h2 class="{{ .Type }}-subheading">{{ $subtitle }}</h2>
@@ -34,12 +34,12 @@
                   {{ if eq .Type "post" }}
                     {{ partial "post_meta.html" . }}
                   {{ end }}
-              </div>
-            </div>
-          </div>
-        </div>
+              </div><!--/.{{ .Type }}-heading-->
+            </div><!--/.col-lg-8 .col-lg-offset-2 .col-md-10 .col-md-offset-1-->
+          </div><!--/.row-->
+        </div><!--/.container-->
         <span class="img-desc" style="display: inline;"></span>
-      </div>
+      </div><!--/.intro-header .big-img-->
     {{end}}
     <div class="intro-header no-img">
       {{ $subtitle := $.Scratch.Get "subtitle" }}
@@ -50,7 +50,7 @@
               <h1>{{ with $.Scratch.Get "title" }}{{.}}{{ else }}<br/>{{ end }}</h1>
                 {{ if $subtitle }}
                   {{ if eq .Type "page" }}
-                    <hr class="small">
+                    <hr class="small" />
                     <span class="{{ .Type }}-subheading">{{ $subtitle }}</span>
                   {{ else }}
                     <h2 class="{{ .Type }}-subheading">{{ $subtitle }}</h2>
@@ -59,12 +59,12 @@
                 {{ if eq .Type "post" }}
                   {{ partial "post_meta.html" . }}
                 {{ end }}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+            </div><!--/.{{ .Type }}-heading-->
+          </div><!--/.col-lg-8 .col-lg-offset-2 .col-md-10 .col-md-offset-1-->
+        </div><!--/.row-->
+      </div><!--/.container-->
+    </div><!--/.intro-header .no-img-->
+  </header><!--/.header-section{{ if $bigimg }} .has-img{{ end }}-->
 {{ else }}
   <div class="intro-header"></div>
 {{ end }}

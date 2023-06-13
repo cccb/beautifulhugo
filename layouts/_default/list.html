@@ -1,18 +1,18 @@
 {{ define "header" }}
-  <header class="header-section ">
+  <header class="header-section">
     <div class="intro-header no-img">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="page-heading">
               <h1>{{ if .Data.Singular }}#{{ end }}{{ .Title }}</h1>
-              <hr class="small">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+              <hr class="small" />
+            </div><!--/.page-heading-->
+          </div><!--/.col-lg-8 .col-lg-offset-2 .col-md-10 .col-md-offset-1-->
+        </div><!--/.row-->
+      </div><!--/.container-->
+    </div><!--/.intro-header .no-img-->
+  </header><!--/.header-section-->
 {{ end }}
 {{ define "main" }}
   <div class="container" role="main">
@@ -21,7 +21,7 @@
         {{ with .Content }}
           <div class="well">
             {{.}}
-          </div>
+          </div><!--/.well-->
         {{ end }}
         <div class="posts-list">
           {{ range .Paginator.Pages }}
@@ -30,15 +30,13 @@
                 <h2 class="post-title">{{ .Title }}</h2>
 
                 {{ if .Params.subtitle }}
-                  <h3 class="post-subtitle">
-                    {{ .Params.subtitle }}
-                  </h3>
+                <h3 class="post-subtitle">{{ .Params.subtitle }}</h3>
                 {{ end }}
               </a>
 
               <p class="post-meta">
                 {{ partial "post_meta.html" . }}
-              </p>
+              </p><!--/.post-meta-->
               <div class="post-entry">
                 {{ if .Truncated }}
                   {{ .Summary }}
@@ -46,34 +44,34 @@
                 {{ else }}
                   {{ .Content }}
                 {{ end }}
-              </div>
+              </div><!--/.post-entry-->
 
               {{ if .Params.tags }}
                 <div class="blog-tags">
                   {{ range .Params.tags }}
                     <a href="{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
                   {{ end }}
-                </div>
+                </div><!--/.blog-tags-->
               {{ end }}
 
-            </article>
+            </article><!--/.post-preview-->
           {{ end }}
-        </div>
+        </div><!--/.posts-list-->
         {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
           <ul class="pager main-pager">
             {{ if .Paginator.HasPrev }}
               <li class="previous">
                 <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}/">&larr; {{ i18n "newerPosts" }}</a>
-              </li>
+              </li><!--/.previous-->
             {{ end }}
             {{ if .Paginator.HasNext }}
               <li class="next">
                 <a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}/">{{ i18n "olderPosts" }} &rarr;</a>
-              </li>
+              </li><!--/.next-->
             {{ end }}
-          </ul>
+          </ul><!--/.pager .main-pager-->
         {{ end }}
-      </div>
-    </div>
-  </div>
+      </div><!--/.col-lg-8 .col-lg-offset-2 .col-md-10 .col-md-offset-1-->
+    </div><!--/.row-->
+  </div><!--/.container-->
 {{ end }}
