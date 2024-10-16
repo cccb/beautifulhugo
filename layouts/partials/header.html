@@ -28,7 +28,8 @@
 
   <header class="header-section{{ if $bigimg }} has-img{{ end }}">
     {{ if $bigimg }}
-      <div class="intro-header big-img">
+      {{ $firstimg := index $bigimg 0 }}
+      <div class="intro-header big-img" style="background-image: url('{{$firstimg.src}}');">
         {{ $subtitle := $.Scratch.Get "subtitle" }}
         <div class="container">
           <div class="row">
@@ -46,12 +47,12 @@
                   {{ if eq .Type "post" }}
                     {{ partial "post_meta.html" . }}
                   {{ end }}
-              </div><!--/.{{ .Type }}-heading-->
-            </div><!--/.col-lg-8 .col-lg-offset-2 .col-md-10 .col-md-offset-1-->
-          </div><!--/.row-->
-        </div><!--/.container-->
-        <span class="img-desc" style="display: inline;"></span>
-      </div><!--/.intro-header .big-img-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: {{ cond (isset $firstimg "desc") "inline" "none"}};">{{$firstimg.desc}}</span>
+      </div>
     {{end}}
     {{ if $title }}
     <div class="intro-header no-img">
